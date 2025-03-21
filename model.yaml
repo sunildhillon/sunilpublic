@@ -1,0 +1,55 @@
+version: 1.2.1
+
+cache: true
+
+registration:
+  socialLogins:
+    - "discord"
+    - "facebook"
+    - "github"
+    - "google"
+    - "openid"
+
+endpoints:
+  custom:
+    # OpenRouter.ai
+    # Model list: https://openrouter.ai/models
+    # Script to fetch models: https://github.com/LibreChat-AI/librechat-config-yaml/blob/main/scripts/openrouter.py
+    - name: "Coinslab"
+      apiKey: "${OPENROUTER_KEY}"
+      baseURL: "https://openrouter.ai/api/v1"
+      models:
+        default:
+          - '---OPENAI---'
+          - openai/gpt-4o
+          - openai/gpt-4o-search-preview
+          - openai/gpt-4.5-preview
+          - openai/o3-mini-high          
+          - openai/o1
+          - openai/o1-pro
+          - '---ANTHROPIC---'
+          - anthropic/claude-3.7-sonnet
+          - anthropic/claude-3.7-sonnet:thinking
+          - '---DEEPSEEK---'
+          - deepseek/deepseek-r1:free
+          - deepseek/deepseek-chat
+          - deepseek/deepseek-r1
+          - '---GOOGLE---'
+          - google/gemini-2.0-flash-001       
+          - '---PERPLEXITY---'
+          - perplexity/sonar-pro
+          - perplexity/sonar-reasoning-pro
+          - perplexity/sonar-deep-research
+          - '---X-AI---'
+          - x-ai/grok-2-1212
+        fetch: false
+      dropParams:
+        - "stop"
+      titleConvo: true
+      titleModel: "openai/gpt-4o-mini"
+      summarize: false
+      summaryModel: "openai/gpt-4o-mini"
+      forcePrompt: false
+      modelDisplayLabel: "Coinslab"
+
+   
