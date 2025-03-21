@@ -45,7 +45,7 @@ endpoints:
         fetch: false
       dropParams:
         - "stop"
-      titleConvo: true
+      titleConvo: false
       titleModel: "openai/gpt-4o-mini"
       summarize: false
       summaryModel: "openai/gpt-4o-mini"
