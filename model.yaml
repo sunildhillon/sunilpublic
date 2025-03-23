@@ -45,8 +45,8 @@ endpoints:
         fetch: false
       dropParams:
         - "stop"
-      titleConvo: false
-      titleModel: "openai/gpt-4o-mini"
+      titleConvo: true
+      titleModel: "meta-llama/llama-3.2-1b-instruct:free"
       summarize: false
       summaryModel: "openai/gpt-4o-mini"
       forcePrompt: false
