@@ -50,6 +50,6 @@ endpoints:
       summarize: false
       summaryModel: "openai/gpt-4o-mini"
       forcePrompt: false
-      modelDisplayLabel: "name"
+      modelDisplayLabel: name
 
    
