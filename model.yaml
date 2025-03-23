@@ -12,44 +12,60 @@ registration:
 
 endpoints:
   custom:
-    # OpenRouter.ai
-    # Model list: https://openrouter.ai/models
-    # Script to fetch models: https://github.com/LibreChat-AI/librechat-config-yaml/blob/main/scripts/openrouter.py
-    - name: "Coinslab"
+    - name: "co-openai"  # Changed from "openai"
       apiKey: "${OPENROUTER_KEY}"
       baseURL: "https://openrouter.ai/api/v1"
       models:
         default:
-          - '---OPENAI---'
           - openai/gpt-4o
           - openai/gpt-4o-search-preview
           - openai/gpt-4.5-preview
-          - openai/o3-mini-high          
+          - openai/o3-mini-high
           - openai/o1
           - openai/o1-pro
-          - '---ANTHROPIC---'
+      modelDisplayLabel: "name"
+
+    - name: "co-anthropic"  # Changed from "anthropic"
+      apiKey: "${OPENROUTER_KEY}" 
+      baseURL: "https://openrouter.ai/api/v1"
+      models:
+        default:
           - anthropic/claude-3.7-sonnet
           - anthropic/claude-3.7-sonnet:thinking
-          - '---DEEPSEEK---'
+      modelDisplayLabel: "name"
+
+    - name: "co-deepseek"
+      apiKey: "${OPENROUTER_KEY}"
+      baseURL: "https://openrouter.ai/api/v1"
+      models:
+        default:
           - deepseek/deepseek-r1:free
           - deepseek/deepseek-chat
           - deepseek/deepseek-r1
-          - '---GOOGLE---'
-          - google/gemini-2.0-flash-001       
-          - '---PERPLEXITY---'
+      modelDisplayLabel: "name"
+
+    - name: "co-perplexity"
+      apiKey: "${OPENROUTER_KEY}"
+      baseURL: "https://openrouter.ai/api/v1"
+      models:
+        default:
           - perplexity/sonar-pro
           - perplexity/sonar-reasoning-pro
           - perplexity/sonar-deep-research
-          - '---X-AI---'
-          - x-ai/grok-2-1212
-        fetch: false
-      dropParams:
-        - "stop"
-      titleConvo: true
-      titleModel: "meta-llama/llama-3.2-1b-instruct:free"
-      summarize: false
-      summaryModel: "openai/gpt-4o-mini"
-      forcePrompt: false
-      modelDisplayLabel: name
+      modelDisplayLabel: "name"
 
-   
+    - name: "co-x-ai"
+      apiKey: "${OPENROUTER_KEY}"
+      baseURL: "https://openrouter.ai/api/v1" 
+      models:
+        default:
+          - x-ai/grok-2-1212
+      modelDisplayLabel: "name"
+
+    - name: "co-gemini"  # Changed from "google"
+      apiKey: "${OPENROUTER_KEY}"
+      baseURL: "https://openrouter.ai/api/v1"
+      models:
+        default:
+          - google/gemini-2.0-flash-001
+      modelDisplayLabel: "name"
